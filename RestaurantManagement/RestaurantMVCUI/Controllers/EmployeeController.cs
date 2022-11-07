@@ -21,18 +21,19 @@ namespace RestaurantMVCUI.Controllers
         {
             return View();
         }
-        public IActionResult Login()
+
+        public IActionResult EmpLogin()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Login(Employee employee)
-        {
 
+        [HttpPost]
+        public async Task<IActionResult> EmpLogin(Employee employeeInfo)
+        {
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(employee), Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(employeeInfo), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "Employee/Login";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
