@@ -38,6 +38,18 @@ namespace RestaurantAPI
             services.AddTransient<AdminService, AdminService>();//adding services
             services.AddTransient<IAdminRepost, AdminRepost>();
 
+            services.AddTransient<EmployeeService, EmployeeService>();//adding services
+            services.AddTransient<IEmployeeRepost, EmployeeRepost>();
+
+            services.AddTransient<FoodService, FoodService>();//adding services
+            services.AddTransient<IFoodRepost, FoodRepost>();
+
+            services.AddTransient<OrderService, OrderService>();//adding services
+            services.AddTransient<IOrderRepost, OrderRepost>();
+
+            services.AddTransient<HallTableService, HallTableService>();//adding services
+            services.AddTransient<IHallTableRepost, HallTableRepost>();
+
             services.AddControllers();
 
             services.AddSwaggerGen();

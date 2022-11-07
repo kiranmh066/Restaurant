@@ -22,6 +22,6 @@ namespace RestaurantEntity
 
         public string EmpSpeciality { get; set; }
 
-        public int EmpPhone { get; set; }
+        public double EmpPhone { get; set; }
     }
 }
